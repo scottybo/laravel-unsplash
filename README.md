@@ -3,17 +3,19 @@
 
 **This package contain pulic actions**
 
+Forked and updated to be compatible with Laravel 6
+
 ## Install
 
 Via Composer
 
 ``` bash
-$ composer require mahdimajidzadeh/laravel-unsplash
+$ composer require scottybo/laravel-unsplash
 ```
 If you do not run Laravel 5.5 (or higher), then add the service provider in config/app.php:
 
 ```
-MahdiMajidzadeh\LaravelUnsplash\LaravelUnsplashServiceProvider::class
+Scottybo\LaravelUnsplash\LaravelUnsplashServiceProvider::class
 ```
 
 If you do run the package on Laravel 5.5+, package auto-discovery takes care of the magic of adding the service provider.
@@ -21,7 +23,7 @@ If you do run the package on Laravel 5.5+, package auto-discovery takes care of 
 You must publish the configuration to provide an own service provider stub.
 
 ``` bash
-$ php artisan vendor:publish --provider="MahdiMajidzadeh\LaravelUnsplash\LaravelUnsplashServiceProvider"
+$ php artisan vendor:publish --provider="Scottybo\LaravelUnsplash\LaravelUnsplashServiceProvider"
 ```
 
 ## Usage
@@ -32,7 +34,7 @@ List of methods:
 ### Photos
 
 ``` php
-$unsplash  = new MahdiMajidzadeh\LaravelUnsplash\Photo();
+$unsplash  = new Scottybo\LaravelUnsplash\Photo();
 $photos    = $unsplash->photos($params)->get();          // list of all photos
 $photo     = $unsplash->single($id, $params)->get();     // single photo
 $statistic = $unsplash->statistic($id, $params)->get();  // single photo statistics
@@ -51,7 +53,7 @@ $photos = $unsplash->random($params)->getURL(); // return https://source.unsplas
 ### Users
 
 ``` php
-$unsplash     = new MahdiMajidzadeh\LaravelUnsplash\User();
+$unsplash     = new Scottybo\LaravelUnsplash\User();
 $user         = $unsplash->single($username, $params)->get();       // single user
 $portfolio    = $unsplash->portfolio($username);                    // single user's portfolio
 $photos       = $unsplash->photos($username, $params)->get();       // single user's photos
@@ -65,7 +67,7 @@ $statistics   = $unsplash->statistics($username, $params)->get();   // single us
 ### Collections
 
 ``` php
-$unsplash    = new MahdiMajidzadeh\LaravelUnsplash\Collection();
+$unsplash    = new Scottybo\LaravelUnsplash\Collection();
 $collection  = $unsplash->collections($params)->get(); // list of all collections
 $collection  = $unsplash->single($id)->get(); // single collections
 $photos      = $unsplash->photos($id, $params)->get(); // collection photos
@@ -80,7 +82,7 @@ $collection  = $unsplash->featured($params)->get(); // list of featured collecti
 ### Search
 
 ``` php
-$unsplash   = new MahdiMajidzadeh\LaravelUnsplash\Search();
+$unsplash   = new Scottybo\LaravelUnsplash\Search();
 $photos     = $unsplash->photo($query, $params)->get();
 $collection = $unsplash->collection($query, $params)->get();
 $user       = $unsplash->user($query, $params)->get();

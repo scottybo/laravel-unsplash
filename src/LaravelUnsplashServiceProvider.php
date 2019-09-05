@@ -1,6 +1,6 @@
 <?php
 
-namespace MahdiMajidzadeh\LaravelUnsplash;
+namespace Scottybo\LaravelUnsplash;
 
 use Illuminate\Support\ServiceProvider;
 
